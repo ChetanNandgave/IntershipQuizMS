@@ -1,8 +1,12 @@
 package com.sunbeam.menu;
 
 import java.util.Scanner;
+import com.sunbeam.quiz.service.*;
 
 public class AdminMenu {
+	
+	private static AdminService adminService=new AdminService();
+	
 	private static int adminMenuOptions(Scanner sc) {
 		System.out.println("**********Admin Menu**************");
 		System.out.println("0.Logout");
@@ -20,16 +24,17 @@ public class AdminMenu {
 		while((choice=adminMenuOptions(sc))!=0) {
 			switch(choice) {
 			case 1:
-				System.out.println("Create Quiz selected");
+				adminService.createQuiz();
 				break;
 			case 2:
-				System.out.println("Create list Quizzes selected");
+				adminService.listQuiz();
+				
 				break;
 			case 3:
-				System.out.println("Create delete Quizzes selected");
+				adminService.deleteQuiz();
 				break;
 			case 4:
-				System.out.println("Create Update Quizzes selected");
+				adminService.updateQuiz();
 				break;
 			default:
 				System.out.println("Wrong Choice");

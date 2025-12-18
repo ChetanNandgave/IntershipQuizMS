@@ -7,15 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.sunbeam.quiz.dao.UserDao;
+import com.sunbeam.quiz.dao.adminDao;
+import com.sunbeam.quiz.model.User;
+import com.sunbeam.quiz.service.AdminService;
+
 public class MainMenu {
-	
-	private static final String URL="jdbc:mysql://localhost:3306/quiz";
-	private static final String USERNAME="root";
-	private static final String PASSWORD="manager";
-	
-	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection( URL,USERNAME,PASSWORD);
-	}
+
+	private static AdminMenu adminMenu=new AdminMenu();
 	
 	public static int mainMenuOptions(Scanner sc) {
 		System.out.println("***********MainMenu*************");
@@ -28,51 +27,19 @@ public class MainMenu {
 		
 		
 	}
-	public static void mainMenu(Scanner sc) {
+	public static void mainMenu(Scanner sc) throws SQLException, Exception {
 		
 		int choice;
 		while((choice=mainMenuOptions(sc))!=0) {
 			switch(choice) {
 		
 			case 1:
-				System.out.println("You have selected Admin Login");
-				System.out.println("Enter the Admin Email:");
-				String Email=sc.next();
-				System.out.println("Enter the Password");
-				String Password=sc.next();
-				String Role="Admin";
-				String sql="SELECT*FROM users WHERE email=? AND password_hash=? AND role=?";
-				try {
-				Connection connection=getConnection();
-				PreparedStatement adminLogin=connection.prepareStatement(sql);
-				adminLogin.setString(1, Email);
-				adminLogin.setString(2, Password);
-				adminLogin.setString(3, Role);
-				ResultSet rs=adminLogin.executeQuery();
-				if(rs.next()) {
-					int user_id=rs.getInt(1);
-					String name=rs.getString(2);
-					String email=rs.getString(3);
-					String role=rs.getString(5);
-					//System.out.println(user_id+"-"+name+"-"+email+"-"+role);
-					System.out.println("Login Succesfull");
-					System.out.println();
-					AdminMenu.adminMenu(sc);
-				}
-				else {
-					System.out.println("Login Failed");
-					System.out.println();
-					
-				}
-				}catch(SQLException e) {
-					e.printStackTrace();
-				}
-				
+				adminlogin(sc);
 					
 				
 				break;
 			case 2:
-				System.out.println("You have selected Student Register");
+				/*System.out.println("You have selected Student Register");
 				System.out.println("Enter Student id:");
 				int ID=sc.nextInt();
 				System.out.println("Enter Student name:");
@@ -99,14 +66,14 @@ public class MainMenu {
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}*/
 				
 				
 				
 				
 				break;
 			case 3:
-				System.out.println("You have selected student login");
+				/*System.out.println("You have selected student login");
 				System.out.println("Enter Student email:");
 				String Email1=sc.next();
 				System.out.println("Enter Student Password:");
@@ -139,11 +106,29 @@ public class MainMenu {
 					e.printStackTrace();
 				}
 				
-				StudentMenu.studentMenu(sc);
+				StudentMenu.studentMenu(sc); */
 				break;
 			default:
 				System.out.println("Wrong choice");
 				break;
+			}
+		}
+	}
+	
+	private static void adminlogin(Scanner sc) throws SQLException, Exception {
+		System.out.println("You have selected Admin Login");
+		System.out.println("Enter the Admin Email:");
+		String Email=sc.next();
+		System.out.println("Enter the Password");
+		String Password=sc.next();
+		
+		try(UserDao ud=new UserDao()){
+			User u=ud.findByEmail(Email);
+			if(u!=null && u.password.equals(Password) && u.role.equals("Admin")) {
+				System.out.println("Loggeg in as admin: "+u.name);
+				AdminService.adminMenu(sc, u.id);
+			}else {
+				System.out.println("Invalid Admin Credentials");
 			}
 		}
 	}
