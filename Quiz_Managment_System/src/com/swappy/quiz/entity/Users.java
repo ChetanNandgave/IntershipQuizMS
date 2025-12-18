@@ -1,15 +1,33 @@
-package com.sunbeam.quiz.model;
+package com.swappy.quiz.entity;
 
+<<<<<<< HEAD:QuizManagementSystem/src/com/sunbeam/quiz/model/User.java
 public class User {
+=======
+public class Users {
+>>>>>>> main:Quiz_Managment_System/src/com/swappy/quiz/entity/Users.java
 	public int id;
 	public String name;
 	public String email;
 	public String password;
 	public String role;
+<<<<<<< HEAD:QuizManagementSystem/src/com/sunbeam/quiz/model/User.java
 	
 	public User() {
 		super();
+=======
+
+	public Users() {
+>>>>>>> main:Quiz_Managment_System/src/com/swappy/quiz/entity/Users.java
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Users(int id, String name, String email, String password, String role) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.role = role;
 	}
 
 	public int getId() {
@@ -44,6 +62,12 @@ public class User {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ "]";
+	}
+
 	public String getRole() {
 		return role;
 	}
@@ -52,10 +76,4 @@ public class User {
 		this.role = role;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ "]";
-	}
-	
 }
