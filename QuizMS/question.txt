@@ -1,0 +1,34 @@
+What is the entry point for any Java application?
+A) start() method
+B) init() method
+C) main() method
+D) run() method
+Answer: C
+
+Which keyword is used to define a constant in Java?
+A) const
+B) final
+C) static
+D) #define
+Answer: B 
+
+Which OOP pillar involves hiding implementation details and showing only essential features? 
+A) Encapsulation
+B) Inheritance
+C) Polymorphism
+D) Abstraction
+Answer: D 
+
+Where does Java store local variables and method parameters when a method is called?
+A) Heap Memory
+B) Stack Memory
+C) Static Memory
+D) Register
+Answer: B 
+
+What does the private access modifier restrict access to?
+A) Only subclasses
+B) Within the same package
+C) Only within the same class
+D) From any class
+Answer: C

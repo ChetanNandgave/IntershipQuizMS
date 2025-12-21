@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class StudentMenu {
 	
-	private static int studentMenuOptons(Scanner sc) {
+	public int studentMenuOptions(Scanner sc) {
+		
 		System.out.println("0.Logout");
 		System.out.println("1.View Quiz");
 		System.out.println("2.Take Quiz");
@@ -12,11 +13,11 @@ public class StudentMenu {
 		System.out.println();
 		System.out.println("Enter The Choice:");
 		return sc.nextInt();
-		
 	}
-	public static void studentMenu(Scanner sc) {
+	
+	public void studentMenu(Scanner sc) {
 		int choice;
-		while((choice=studentMenuOptons(sc))!=0) {
+		while((choice=studentMenuOptions(sc))!=0) {
 			switch(choice) {
 			case 1:
 				System.out.println("Selected View Quiz");
@@ -34,6 +35,7 @@ public class StudentMenu {
 				System.out.println("Wrong Choice");
 				System.out.println();
 				break;
+			
 			}
 		}
 	}
