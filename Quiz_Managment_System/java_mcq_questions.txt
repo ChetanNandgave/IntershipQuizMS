@@ -1,0 +1,69 @@
+Which company created Java?
+A) Sun Microsystems
+B) Microsoft
+C) Apple
+D) Google
+ANSWER: A
+
+What is the extension of Java bytecode files?
+A) .java
+B) .class
+C) .exe
+D) .js
+ANSWER: B
+
+Which keyword is used to inherit a class in Java?
+A) implement
+B) extends
+C) inherits
+D) super
+ANSWER: B
+
+Which method is the entry point of a Java program?
+A) start()
+B) run()
+C) main()
+D) init()
+ANSWER: C
+
+Which of these is not a Java primitive data type?
+A) int
+B) float
+C) String
+D) boolean
+ANSWER: C
+
+Which JVM component loads class files into memory?
+A) Compiler
+B) Class Loader
+C) Interpreter
+D) Garbage Collector
+ANSWER: B
+
+Which keyword is used to create an object in Java?
+A) class
+B) new
+C) object
+D) create
+ANSWER: B
+
+Which access modifier makes a variable accessible only within the same class?
+A) public
+B) protected
+C) default
+D) private
+ANSWER: D
+
+Which concept allows the same method name with different parameters?
+A) Inheritance
+B) Abstraction
+C) Polymorphism
+D) Encapsulation
+ANSWER: C
+
+Which exception is checked at compile time?
+A) NullPointerException
+B) ArrayIndexOutOfBoundsException
+C) IOException
+D) ArithmeticException
+ANSWER: C

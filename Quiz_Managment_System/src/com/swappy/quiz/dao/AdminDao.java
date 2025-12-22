@@ -10,7 +10,7 @@ import com.swappy.quiz.util.DbUtil;
 
 public class AdminDao implements AutoCloseable{
 	Connection con;
-	Users currentuser = null;
+	public static Users currentuser = null;
 	public AdminDao() throws SQLException {
 		con=DbUtil.getConnection();
 	}
@@ -24,7 +24,12 @@ public class AdminDao implements AutoCloseable{
 			
 			
 			if(rs.next()) {
-			
+				currentuser= new Users();
+				currentuser.setId(rs.getInt(1));
+				currentuser.setName(rs.getString(2));
+				currentuser.setEmail(email);
+				currentuser.setPassword(password);
+				currentuser.setRole(rs.getString(5));
 				return true;
 			}
 			

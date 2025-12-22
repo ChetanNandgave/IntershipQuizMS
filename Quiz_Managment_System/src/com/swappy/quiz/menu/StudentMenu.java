@@ -2,7 +2,10 @@ package com.swappy.quiz.menu;
 
 import java.util.Scanner;
 
+import com.swappy.quiz.service.StudentService;
+
 public class StudentMenu {
+	private static StudentService sds = new StudentService();
 	private static int studentMenuOptions(Scanner sc) {
 		System.out.println();
 		System.out.println();
@@ -21,15 +24,17 @@ public class StudentMenu {
 		while ((choice = studentMenuOptions(sc)) != 4) {
 			switch (choice) {
 			case 1:
-				System.out.println("View Quizes option is selected");
+				sds.showQuizes();
 				break;
 
 			case 2:
-				System.out.println("Take Quiz option is selected");
+//				System.out.println("Take Quiz option is selected");
+				sds.takeQuiz(sc);
 				break;
 
 			case 3:
-				System.out.println("View Scores option is selected");
+				sds.showScore();
+				
 				break;
 
 			default:

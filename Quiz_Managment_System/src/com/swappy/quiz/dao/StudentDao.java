@@ -4,13 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.swappy.quiz.entity.Users;
 import com.swappy.quiz.util.DbUtil;
 
 public class StudentDao implements AutoCloseable{
 	Connection con;
-	public Users currentuser = null;
+	public static Users currentuser = null;
 	public StudentDao() throws SQLException {
 		con=DbUtil.getConnection();
 	}
@@ -55,6 +57,22 @@ public class StudentDao implements AutoCloseable{
 		
 	}
 	
+		public List<String[]> viewScore() throws SQLException {
+			List<String []> list = new ArrayList<>();
+			String sql = "select at.quiz_id,at.final_score, q.title from quizzes q inner join quize_attempts at on q.quiz_id=at.quiz_id where student_id=?";
+			try(PreparedStatement stmt = con.prepareStatement(sql)){
+				stmt.setInt(1, currentuser.id);
+				ResultSet rs = stmt.executeQuery();
+				
+				while(rs.next()) {
+					String quizInfo []= {rs.getInt(1)+"",rs.getInt(2)+"",rs.getString(3)};
+					list.add(quizInfo);
+				}
+			}
+			return list;
+			
+		}
+		
 	@Override
 	public void close() throws SQLException {
 		if(con!=null) {
