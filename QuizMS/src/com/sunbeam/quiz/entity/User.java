@@ -1,11 +1,11 @@
 package com.sunbeam.quiz.entity;
 
 public class User {
-	int id;
-	String name;
-	String email;
-	String password;
-	String role;
+	public int id;
+	public String name;
+	public String email;
+	public String password;
+	public String role;
 	
 	public User() {
 		// TODO Auto-generated constructor stub

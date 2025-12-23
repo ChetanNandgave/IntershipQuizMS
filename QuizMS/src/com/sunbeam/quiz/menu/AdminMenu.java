@@ -13,6 +13,8 @@ public class AdminMenu {
 		System.out.println("1.Create Quiz");
 		System.out.println("2.List Quiz");
 		System.out.println("3.Delete Quiz");
+		System.out.println("4.View Score");
+		
 		
 		System.out.println();
 		System.out.println("Enter choice:");
@@ -38,6 +40,11 @@ public class AdminMenu {
 				System.out.println();
 				System.out.println("Selected Delete quiz");
 				ads.deleteQuiz(sc);
+				break;
+			case 4:
+				System.out.println();
+				System.out.println("Selected ViewScore");
+				ads.showScore(sc);
 				break;
 			default:
 				System.out.println();

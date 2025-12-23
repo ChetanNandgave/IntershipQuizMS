@@ -15,9 +15,8 @@ public class Question {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Question(int id, int quiz_id, String text, String a, String b, String c, String d, char correct) {
+	public Question( int quiz_id, String text, String a, String b, String c, String d, char correct) {
 		
-		this.id = id;
 		this.quiz_id = quiz_id;
 		this.text = text;
 		this.a = a;

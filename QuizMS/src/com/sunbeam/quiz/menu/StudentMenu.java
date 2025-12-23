@@ -2,7 +2,11 @@ package com.sunbeam.quiz.menu;
 
 import java.util.Scanner;
 
+import com.sunbeam.quiz.service.StudentService;
+
 public class StudentMenu {
+	
+	StudentService sds=new StudentService();
 	
 	public int studentMenuOptions(Scanner sc) {
 		
@@ -21,14 +25,17 @@ public class StudentMenu {
 			switch(choice) {
 			case 1:
 				System.out.println("Selected View Quiz");
+				sds.listQuiz();
 				System.out.println();
 				break;
 			case 2:
 				System.out.println("Selected Take Quiz");
+				sds.takeQuiz(sc);
 				System.out.println();
 				break;
 			case 3:
 				System.out.println("Selected View Quiz");
+				sds.showScore();
 				System.out.println();
 				break;
 			default:

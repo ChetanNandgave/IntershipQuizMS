@@ -1,11 +1,13 @@
 package com.sunbeam.quiz.service;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 import com.sunbeam.quiz.dao.AdminDao;
 import com.sunbeam.quiz.dao.QuestionDao;
 import com.sunbeam.quiz.dao.QuizDao;
+import com.sunbeam.quiz.dao.StudentDao;
 import com.sunbeam.quiz.menu.AdminMenu;
 
 public class AdminService {
@@ -78,5 +80,25 @@ public class AdminService {
 			e.printStackTrace();
 		}
 	}
+	
+	public void showScore(Scanner sc) {
+		try(QuizDao qd=new QuizDao()){
+			System.out.println("Enter Quiz ID: ");
+			List<String[]> list=qd.viewScore(sc.nextInt());
+			if(list.isEmpty()) {
+				System.out.println("No  Quiz are Available");
+				
+			}else {
+				for(String[] s:list) {
+					System.out.println("User ID:"+s[0]);
+					System.out.println("User Name:"+s[2]);
+					System.out.println("Your Score:"+s[1]);
+				}
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }

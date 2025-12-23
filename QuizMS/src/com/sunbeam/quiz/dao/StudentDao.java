@@ -4,12 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sunbeam.quiz.entity.User;
 import com.sunbeam.quiz.util.DbUtil;
 
 public class StudentDao implements AutoCloseable{
 	Connection connection=null;
+	public static User u=new User();
+	
 	
 	public StudentDao() throws SQLException {
 		connection=DbUtil.getConnection();
@@ -37,15 +41,35 @@ public class StudentDao implements AutoCloseable{
 	public boolean studentLogin(String email,String password) throws SQLException {
 		String sql="SELECT*FROM users WHERE email=? AND password_hash=?";
 		try(PreparedStatement stmt=connection.prepareStatement(sql)){
+			
 			stmt.setString(1,email);
 			stmt.setString(2, password);
 			ResultSet rs=stmt.executeQuery();
 			
 			if(rs.next()) {
+				u.setId(rs.getInt(1));
 				return true;
 			}
 			return false;
 		}
+		
+		
+	}
+	
+	public List<String[]> viewScore() throws SQLException{
+		List<String[]> list =new ArrayList<>();
+		String sql="SELECT q.quiz_id,q.title,a.final_score FROM quizzes q INNER JOIN quiz_attempts a ON q.quiz_id=a.quiz_id WHERE student_id=? ";
+		try(PreparedStatement stmt=connection.prepareStatement(sql)){
+			stmt.setInt(1, u.id);
+			ResultSet rs=stmt.executeQuery();
+			
+			while(rs.next()) {
+				String quizInfo[]= {rs.getInt(1)+"",rs.getString(2)+" ",rs.getInt(3)+""};
+				list.add(quizInfo);
+			}
+			
+		}
+		return list;
 		
 		
 	}
