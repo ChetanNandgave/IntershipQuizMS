@@ -1,0 +1,63 @@
+Q.1.Which of the following is NOT considered one of the four pillars of OOP in Java?
+A)Encapsulation
+B)Inheritance
+C)Polymorphism
+D)Iteration
+Answer: D
+ 
+Q.2.What is the primitive data type used to store single 16-bit Unicode characters in Java?
+A)char
+B)String
+C)byte
+D)int
+Answer: A
+ 
+Q.3.Which keyword is used to explicitly throw an exception in Java?
+A)throws
+B)throw
+C)catch
+D)finally
+Answer: B 
+
+Q.4.What does the JVM (Java Virtual Machine) primarily do?
+A)Compiles Java code into machine code.
+B)Executes bytecode, providing platform independence.
+C)Manages memory manually.
+D)Connects to databases.
+Answer: B
+
+ 
+Q.5.Which statement about constructors in Java is true?
+A)They can have a return type, including void.
+B)They must have the same name as the class.
+C)They are inherited by subclasses.
+D)They can be static.
+Answer: B 
+
+Q.6.What Java 8 feature provides a container object that may or may not contain a non-null value, helping to avoid NullPointerExceptions?
+A)CompletableFuture
+B)Stream
+C)Optional
+D)Lambda
+Answer: C
+ 
+Q.7.Which method of the String class checks if two strings have the same sequence of characters (content equality)?
+A)== operator
+B).equals() method
+C).equalsIgnoreCase()
+D).compareTo()
+Answer: B 
+
+Q.8.In Java, how can a class achieve something similar to multiple inheritance?
+A)By extending multiple classes.
+B)By implementing multiple interfaces.
+C)By inheriting from an abstract class.
+D)By using composition.
+Answer: B
+ 
+Q.9.Where are objects stored in Java's memory?
+A)Stack
+B)Heap
+C)Data Segment
+D)Code Segment
+Answer: B 
