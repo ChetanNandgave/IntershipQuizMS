@@ -1,0 +1,69 @@
+What is Java?
+A) A scripting language
+B) A platform-dependent language
+C) A platform-independent language
+D) A markup language
+ANSWER: C
+
+Which keyword is used to create a class in Java?
+A) struct
+B) class
+C) define
+D) object
+ANSWER: B
+
+Which method is the entry point of a Java program?
+A) start()
+B) main()
+C) run()
+D) init()
+ANSWER: B
+
+Which of these is NOT a Java feature?
+A) Object-Oriented
+B) Portable
+C) Use of pointers
+D) Secure
+ANSWER: C
+
+Which keyword is used to inherit a class in Java?
+A) implements
+B) inherits
+C) extends
+D) super
+ANSWER: C
+
+Which data type is used to store true or false values?
+A) int
+B) boolean
+C) char
+D) float
+ANSWER: B
+
+Which access modifier makes a member accessible only within the same class?
+A) public
+B) protected
+C) default
+D) private
+ANSWER: D
+
+Which package contains Scanner class?
+A) java.io
+B) java.lang
+C) java.util
+D) java.sql
+ANSWER: C
+
+What is JVM?
+A) Java Variable Method
+B) Java Virtual Machine
+C) Java Verified Mode
+D) Java Visual Model
+ANSWER: B
+
+Which keyword is used to handle exceptions in Java?
+A) throw
+B) throws
+C) try-catch
+D) error
+ANSWER: C

@@ -1,0 +1,69 @@
+What is Python?
+A) A low-level programming language
+B) A high-level programming language
+C) A database system
+D) An operating system
+ANSWER: B
+
+Which keyword is used to define a function in Python?
+A) func
+B) function
+C) def
+D) define
+ANSWER: C
+
+Which data type is immutable in Python?
+A) List
+B) Set
+C) Dictionary
+D) Tuple
+ANSWER: D
+
+What is the output of print(type(10))?
+A) <class 'float'>
+B) <class 'str'>
+C) <class 'int'>
+D) <class 'bool'>
+ANSWER: C
+
+Which symbol is used for comments in Python?
+A) //
+B) <!-- -->
+C) #
+D) **
+ANSWER: C
+
+Which of the following is used to handle exceptions in Python?
+A) try-except
+B) if-else
+C) for-while
+D) do-while
+ANSWER: A
+
+Which method is used to add an element to a list?
+A) add()
+B) insert()
+C) append()
+D) put()
+ANSWER: C
+
+What does len() function return?
+A) Size in bytes
+B) Number of elements
+C) Memory address
+D) Data type
+ANSWER: B
+
+Which operator is used for exponentiation in Python?
+A) ^
+B) **
+C) //
+D) %%
+ANSWER: B
+
+Which statement is used to stop a loop in Python?
+A) exit
+B) stop
+C) break
+D) return
+ANSWER: C
