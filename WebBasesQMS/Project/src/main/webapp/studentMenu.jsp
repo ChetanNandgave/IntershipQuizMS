@@ -11,5 +11,6 @@
 	<button type="button" ><a href="viewQuiz.jsp">View Quiz</a></button>
 	<button type="button" ><a href="takeQuiz.jsp">Take Quiz</a></button>
 	<button type="button" ><a href="viewScore.jsp">View Score</a></button>
+	<button type="button"><a href="logout.jsp">Logout</a></button>
 </body>
 </html>

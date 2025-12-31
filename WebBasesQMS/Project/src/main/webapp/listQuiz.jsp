@@ -29,7 +29,7 @@ ${qlb.fetchQuizzes()}
 				<a href="editQuiz.jsp?quizId=${c.quiz_id}">
 				<img alt="Edit" src="images/editImage.png" height="25px"/ >
 				</a>
-				<a href="deleteQuiz.jsp?quizId=${c.quiz_id}">
+				<a href="deleteQuiz.jsp?quiz_Id=${c.quiz_id}">
 				<img alt="Delete" src="images/images.png" height="25px"/ >
 				</a>
 			</td>
