@@ -13,7 +13,7 @@
 <h2>Attempt Quiz</h2>
 
 <jsp:useBean id="aqb" class="com.beans.AttemptQuizBean" scope="request"/>
-<jsp:setProperty name="aqb" property="quiz_id" param="quizId"/>
+<jsp:setProperty name="aqb" property="quiz_id" param="quiz_Id"/>
 
 ${aqb.loadQuestions()}
 

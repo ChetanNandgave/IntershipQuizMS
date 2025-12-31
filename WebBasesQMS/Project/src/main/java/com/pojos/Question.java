@@ -23,7 +23,7 @@ public class Question {
 	private char correctOption;
 	
 	public Question(String question_text, String a, String b, String c, String d, char correctOption) {
-		super();
+		
 		this.question_text = question_text;
 		this.a = a;
 		this.b = b;

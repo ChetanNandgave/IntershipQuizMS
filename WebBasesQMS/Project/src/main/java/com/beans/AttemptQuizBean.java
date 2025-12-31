@@ -2,17 +2,17 @@ package com.beans;
 
 
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.daos.*;
 
 import com.pojos.Question;
-import com.pojos.Quiz;
 
 public class AttemptQuizBean {
 
     private int quiz_id;
-    private Quiz questionList;
+    private List<Question> questionList;
     private int finalScore;
 
     public int getQuiz_id() {
@@ -36,15 +36,15 @@ public class AttemptQuizBean {
 
     // load questions of selected quiz
     public void loadQuestions() {
-        try (QuizDao qd = new QuizDaoImpl()) {
-            questionList = qd.findById(quiz_id);
+        try (AttemptDao ad = new AttemptDaoImpl()) {
+            questionList = ad.findByQuizId(quiz_id);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // calculate score
-    public void calculateScore(HttpServletRequest request) {
+   /* public void calculateScore(HttpServletRequest request) {
         finalScore = 0;
 
         for (Question q : questionList) {
@@ -53,5 +53,5 @@ public class AttemptQuizBean {
                 finalScore++;
             }
         }
-    }
+    }*/
 }
