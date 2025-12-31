@@ -11,7 +11,7 @@
 </head>
 <body bgcolor="${initParam.theme}">
 	
-	
+	<div class="mainBody">
 		<h1>${initParam.appTitle}</h1>
 		<jsp:useBean id="qlb" class="com.swappy.quiz.beans.QuestionList"
 		scope="session" />
@@ -52,6 +52,6 @@
 		</c:otherwise>
 
 	</c:choose>
-
+</div>
 </body>
 </html>
